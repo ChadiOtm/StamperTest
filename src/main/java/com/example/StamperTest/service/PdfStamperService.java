@@ -17,7 +17,7 @@ public class PdfStamperService {
     @Autowired
     private TemplateEngine templateEngine;
 
-    public byte[] stampPdf(byte[] fileData, String output_path, String input_filename, String text) {
+    public byte[] stampPdf(byte[] fileData, String text) {
         PDFNet.initialize("demo:1694443745717:7c0d7a5c0300000000b523400fba39969ad0bb34bfc8973ab3647fceeb");
 
         try (PDFDoc doc = new PDFDoc(new ByteArrayInputStream(fileData))) {

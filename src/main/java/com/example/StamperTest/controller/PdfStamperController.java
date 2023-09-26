@@ -24,13 +24,11 @@ public class PdfStamperController {
     @PostMapping("/stamp")
     public ResponseEntity<byte[]> stampPdf(
             @RequestBody byte[] fileData,
-            @RequestParam("outputPath") String outputPath,
-            @RequestParam("inputFilename") String inputFilename,
             @RequestParam("text") String text
     ) {
         try {
             // Call the PdfStamperService to stamp the PDF
-            byte[] stampedPdf = pdfStamperService.stampPdf(fileData, outputPath, inputFilename, text);
+            byte[] stampedPdf = pdfStamperService.stampPdf(fileData, text);
 
             if (stampedPdf != null) {
                 // Create a response with the stamped PDF as the body
