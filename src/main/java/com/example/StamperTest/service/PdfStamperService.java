@@ -23,7 +23,7 @@ public class PdfStamperService {
         try (PDFDoc doc = new PDFDoc(new ByteArrayInputStream(fileData))) {
             doc.initSecurityHandler();
 
-            Stamper s = new Stamper(Stamper.e_relative_scale, 0.5, -0.5);
+            Stamper s = new Stamper(Stamper.e_relative_scale, 0.9, 0);
             s.setAlignment(Stamper.e_horizontal_center, Stamper.e_vertical_bottom);
             s.setFont(Font.create(doc, Font.e_courier_bold_oblique, true));
             ColorPt red = new ColorPt(1, 0, 0, 0);
